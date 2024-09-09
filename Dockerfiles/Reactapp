@@ -1,0 +1,25 @@
+FROM node:18
+
+# Create app directory
+WORKDIR /app
+
+# Create Vite project using React template
+RUN npm create vite@latest my-app -- --template react
+
+# Navigate into the project directory
+WORKDIR /app/my-app
+
+# Install dependencies
+RUN npm install
+
+# Build the app
+RUN npm run build
+
+# Install serve to serve the production build
+RUN npm install -g serve
+
+# Serve the app using serve
+CMD ["serve", "-s", "dist", "-l", "3000"]
+
+# Expose the port to access the app
+EXPOSE 3000

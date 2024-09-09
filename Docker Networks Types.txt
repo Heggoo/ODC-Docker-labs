@@ -1,0 +1,16 @@
+What are the types of Docker Networks?
+
+Bridge Network:
+	Default network when you run a container without specifying any network. Containers can communicate with each other if they’re on the same bridge network.
+
+Host Network:
+	The container shares the host's network stack and doesn't get its own IP. Typically used when you want very high network performance or if you want to bypass NAT.
+
+Overlay Network:
+	Used to connect containers across different Docker hosts, commonly used in Docker Swarm.
+
+Macvlan Network:
+	Assigns a MAC address to each container, making it appear as a physical device on the network. This is used when you need direct integration with the network.
+
+None:
+	Disables networking entirely. This is useful for security reasons if the container doesn’t need any networking.
