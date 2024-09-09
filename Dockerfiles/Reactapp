@@ -16,9 +16,10 @@ RUN npm install
 RUN npm run build
 
 # Install serve to serve the production build
+# Serve is a simple static file server that allows you to serve a production build
 RUN npm install -g serve
 
-# Serve the app using serve
+# Serve the app using serve and specify the port to listen, in this case the port number is 3000
 CMD ["serve", "-s", "dist", "-l", "3000"]
 
 # Expose the port to access the app
